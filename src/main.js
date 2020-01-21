@@ -1,8 +1,26 @@
 import Vue from 'vue'
+import VueRouter from 'vue-router'
+import 'bootstrap'
+import 'bootstrap/dist/js/bootstrap.min.js'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import App from './App.vue'
+import HelloWorld from './components/HelloWorld.vue'
 
 Vue.config.productionTip = false
 
+Vue.use(VueRouter)
+
+export const router = new VueRouter({
+  mode: 'history',
+  routes: [
+    { path: '/coucou', component: HelloWorld }
+  ]
+})
+
+
 new Vue({
-  render: h => h(App),
+  router,
+  render: h => h(App)
 }).$mount('#app')
+
