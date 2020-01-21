@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import 'bootstrap'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './App.vue'
-import HelloWorld from './components/HelloWorld.vue'
+import ClientList from './components/ClientList.vue'
 
 Vue.config.productionTip = false
 
@@ -14,7 +13,7 @@ Vue.use(VueRouter)
 export const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/coucou', component: HelloWorld }
+    { path: '/clients', component: ClientList }
   ]
 })
 
