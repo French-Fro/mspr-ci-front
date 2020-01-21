@@ -5,7 +5,7 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './App.vue'
-import HelloWorld from './components/HelloWorld.vue'
+import ProductList from './components/ProductList.vue'
 
 Vue.config.productionTip = false
 
@@ -14,7 +14,8 @@ Vue.use(VueRouter)
 export const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/coucou', component: HelloWorld }
+    { path: '/', component: ProductList },
+    { path: '/products', component: ProductList }
   ]
 })
 
