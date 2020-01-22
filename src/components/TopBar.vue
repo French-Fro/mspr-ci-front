@@ -33,8 +33,8 @@
             <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ selectedClient.lastname }} {{ selectedClient.firstname}}
             </button>
-            <div class="dropdown-menu dropdown-menu-right" v-for="client in clientsList" v-bind:key="client.id">
-                <button class="dropdown-item" v-on:click="selectedClient = client">{{ client.lastname }} {{ client.firstname }}</button>
+            <div class="dropdown-menu dropdown-menu-right" >
+                <button class="dropdown-item" v-for="client in clientsList" v-bind:key="client.id" v-on:click="setSelectedClient(client)">{{ client.lastname }} {{ client.firstname }}</button>
             </div>
         </div>
     </nav>
@@ -42,6 +42,9 @@
 
 
 <script>
+    import VueCookies from 'vue-cookies'
+    VueCookies.config('7d');
+
     export default {
         name: 'TopBar',
         data() {
@@ -51,9 +54,16 @@
             };
         },
         created() {
+            if(this.selectedClient.lastname === undefined && VueCookies.get('selected-client') !== undefined) {
+                this.selectedClient = VueCookies.get('selected-client')
+            }
             this.getClientList();
         },
         methods: {
+            setSelectedClient(client) {
+                this.selectedClient = client
+                VueCookies.set('selected-client', client);
+            },
             async getClientList() {
                 let self = this;
                 fetch(

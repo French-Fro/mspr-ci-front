@@ -8,13 +8,13 @@
                     <input type="text" class="form-control" placeholder="Prix" id="productPrice" required>
                     <!-- form-group// -->
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Créer le compte</button>
+                        <button type="submit" class="btn btn-primary btn-block">Créer le produit</button>
                     </div>
                     <!-- form-group// -->
                 </form>
                 <div class="row">
                     <div class="col-md-4" v-for="product in productList" v-bind:key="product.id">
-                        <Product v-bind:name="product.name" v-bind:price="product.price"/>
+                        <Product v-bind:name="product.name" v-bind:id="product.id" v-bind:price="product.price"/>
                     </div><!--.col-->
                 </div><!--.row-->
             </div><!--.container-->
