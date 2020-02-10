@@ -6,7 +6,7 @@
     <img alt="" src="https://flat.badgen.net/dependabot/French-Fro/mspr-ci-front?icon=dependabot.svg">
 </a>
 <a href="https://github.com/French-Fro/mspr-ci-front">
-    <img alt="" src="https://badgen.net/david/French-Fro/mspr-ci-front/pkg">
+    <img alt="" src="https://badgen.net/david/dep/zeit/pkg">
 </a>
 
 ## Project setup
